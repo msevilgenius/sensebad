@@ -10,6 +10,10 @@ namespace SenseBad.Tiles
     {
         public override void DrawEffects(int i, int j, int type, SpriteBatch spriteBatch, ref Color drawColor)
         {
+            byte red = 0;
+            byte blue = 0;
+            byte green = 0;
+
             if (type == TileID.Crimstone || type == TileID.FleshIce || type == TileID.FleshGrass
                 || type == TileID.Crimsand || type == TileID.CrimsonHardenedSand || type == TileID.CrimsonSandstone
                 || type == TileID.CrimsonVines || type == TileID.CrimtaneThorns)
@@ -17,11 +21,7 @@ namespace SenseBad.Tiles
                 SenseBadPlayer player = Main.LocalPlayer.GetModPlayer<SenseBadPlayer>(mod);
                 if (player.SenseRed == true)
                 {
-                    byte red = 200;
-                    if (drawColor.R < red)
-                    {
-                        drawColor.R = red;
-                    }
+                    red = 200;
                 }
             }
             else if (type == TileID.Ebonstone || type == TileID.CorruptIce || type == TileID.CorruptGrass
@@ -31,21 +31,9 @@ namespace SenseBad.Tiles
                 SenseBadPlayer player = Main.LocalPlayer.GetModPlayer<SenseBadPlayer>(mod);
                 if (player.SensePurple == true)
                 {
-                    byte red = 120;
-                    byte blue = 170;
-                    byte green = 40;
-                    if (drawColor.R < red)
-                    {
-                        drawColor.R = red;
-                    }
-                    if (drawColor.B < blue)
-                    {
-                        drawColor.B = blue;
-                    }
-                    if (drawColor.G < green)
-                    {
-                        drawColor.G = green;
-                    }
+                    red = 120;
+                    blue = 170;
+                    green = 40;
                 }
             }
             else if (type == TileID.Pearlstone || type == TileID.HallowedIce || type == TileID.HallowedGrass
@@ -55,34 +43,30 @@ namespace SenseBad.Tiles
                 SenseBadPlayer player = Main.LocalPlayer.GetModPlayer<SenseBadPlayer>(mod);
                 if (player.SensePink == true)
                 {
-                    byte red = 220;
-                    byte blue = 200;
-                    byte green = 40;
-                    if (drawColor.R < red)
-                    {
-                        drawColor.R = red;
-                    }
-                    if (drawColor.B < blue)
-                    {
-                        drawColor.B = blue;
-                    }
-                    if (drawColor.G < green)
-                    {
-                        drawColor.G = green;
-                    }
+                    red = 220;
+                    blue = 200;
+                    green = 40;
                 }
             }
-        }
-
-        /*
-        public override void PostDraw(int i, int j, int type, SpriteBatch spriteBatch)
-        {
-            SenseBadPlayer player = Main.LocalPlayer.GetModPlayer<SenseBadPlayer>(mod);
-            if (player.SenseRed == true)
+            else
             {
+                return;
+            }
 
+            // Modify render colours if necessary
+            if (drawColor.R < red)
+            {
+                drawColor.R = red;
+            }
+            if (drawColor.B < blue)
+            {
+                drawColor.B = blue;
+            }
+            if (drawColor.G < green)
+            {
+                drawColor.G = green;
             }
         }
-        */
+
     }
 }
