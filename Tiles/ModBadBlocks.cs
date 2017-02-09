@@ -31,9 +31,9 @@ namespace SenseBad.Tiles
                 SenseBadPlayer player = Main.LocalPlayer.GetModPlayer<SenseBadPlayer>(mod);
                 if (player.SensePurple == true)
                 {
-                    red = 120;
-                    blue = 170;
-                    green = 40;
+                    red = 180;
+                    blue = 200;
+                    green = 150;
                 }
             }
             else if (type == TileID.Pearlstone || type == TileID.HallowedIce || type == TileID.HallowedGrass
@@ -43,9 +43,9 @@ namespace SenseBad.Tiles
                 SenseBadPlayer player = Main.LocalPlayer.GetModPlayer<SenseBadPlayer>(mod);
                 if (player.SensePink == true)
                 {
-                    red = 220;
-                    blue = 200;
-                    green = 40;
+                    red = 240;
+                    blue = 220;
+                    green = 160;
                 }
             }
             else
