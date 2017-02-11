@@ -50,7 +50,7 @@ namespace SenseBad.Tiles
             }
             else
             {
-                return;
+                return; // Don't need to modify other tiles
             }
 
             // Modify render colours if necessary
