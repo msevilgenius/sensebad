@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
 
 namespace SenseBad
@@ -26,10 +21,6 @@ namespace SenseBad
             SenseRed = false;
             SensePurple = false;
             SensePink = false;
-        }
-
-        public override void SetupStartInventory(IList<Item> items)
-        { 
         }
 
     }

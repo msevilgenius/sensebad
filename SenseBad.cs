@@ -1,9 +1,5 @@
 ﻿using SenseBad.Tiles;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using Terraria;
 using Terraria.ModLoader;
 
@@ -17,8 +13,6 @@ namespace SenseBad
             {
                 Autoload = true
             };
-            //ModCrimstone mCrimstone = new ModCrimstone();
-            //this.AddGlobalTile("Crimstone", mCrimstone);
         }
     }
 }
