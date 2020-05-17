@@ -1,26 +1,33 @@
 ﻿using Terraria;
-using Terraria.ModLoader;
 using Terraria.ID;
+using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace SenseBad.Items
 {
     class RedPotion : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Crimsense Potion");
+            Tooltip.SetDefault("Shows the location of crimson blocks");
+        }
+
         public override void SetDefaults()
         {
-            item.name = "Red Sense Potion";
             item.width = 20;
             item.height = 20;
             item.maxStack = 30;
-            AddTooltip("Shows the location of crimson blocks");
-            item.value = Item.buyPrice(0, 0, 25, 0); ;
-            item.rare = 1;
-            item.useStyle = 4;
+            item.value = Item.buyPrice(0, 0, 25, 0);
+            item.rare = ItemRarityID.Orange;
+            item.useStyle = ItemUseStyleID.EatingUsing;
             item.useAnimation = 17;
             item.useTime = 17;
+            item.UseSound = SoundID.Item3;
             item.useTurn = false;
             item.consumable = true;
-            item.potion = false;
+            item.buffType = BuffType<Buffs.RedSense>();
+            item.buffTime = 5 * 60 * 60;
         }
 
         public override void AddRecipes()
@@ -34,13 +41,6 @@ namespace SenseBad.Items
             recipe.AddTile(TileID.AlchemyTable);
             recipe.AddTile(TileID.Bottles);
 			recipe.AddRecipe();
-        }
-
-        public override bool UseItem(Player player)
-        {
-            player.AddBuff(mod.BuffType("RedSense"), 5 * 60 * 60, false);
-            Main.PlaySound(SoundID.Item3, -1, -1);
-            return true;
         }
     }
 }

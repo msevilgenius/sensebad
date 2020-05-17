@@ -7,16 +7,17 @@ namespace SenseBad.Buffs
     {
         public override void SetDefaults()
         {
-            Main.buffName[this.Type] = "Purple Sense";
-            Main.buffTip[this.Type] = "Shows the location of corrupt blocks.";
+            DisplayName.SetDefault("Purple Sense");
+            Description.SetDefault("Shows the location of corrupt blocks.");
             Main.debuff[Type] = false;
             Main.pvpBuff[Type] = false;
+            Main.buffNoTimeDisplay[Type] = false;
             Main.buffNoSave[Type] = true;
         }
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.GetModPlayer<SenseBadPlayer>(mod).SensePurple = true;
+            player.GetModPlayer<SenseBadPlayer>().SensePurple = true;
         }
     }
 }

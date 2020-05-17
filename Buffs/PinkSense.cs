@@ -7,16 +7,17 @@ namespace SenseBad.Buffs
     {
         public override void SetDefaults()
         {
-            Main.buffName[this.Type] = "Pink Sense";
-            Main.buffTip[this.Type] = "Shows the location of hallow blocks.";
+            DisplayName.SetDefault("Pink Sense");
+            Description.SetDefault("Shows the location of hallow blocks.");
             Main.debuff[Type] = false;
             Main.pvpBuff[Type] = false;
+            Main.buffNoTimeDisplay[Type] = false;
             Main.buffNoSave[Type] = true;
         }
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.GetModPlayer<SenseBadPlayer>(mod).SensePink = true;
+            player.GetModPlayer<SenseBadPlayer>().SensePink = true;
         }
     }
 }

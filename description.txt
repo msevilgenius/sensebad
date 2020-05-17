@@ -1,0 +1,7 @@
+﻿This mod adds potions that highlight corrupt, crimson, and hallow blocks in much the same way as the spelunker potion highlights ores.
+The potions are crafted with Blinkroot, Moonglow and one of the following:
+- 3x Demonite Ore
+- 3x Crimtane Ore
+- 3x Pixie Dust
+
+These will make a potion that reveals the respective type of blocks.

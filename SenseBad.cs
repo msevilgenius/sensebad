@@ -1,11 +1,8 @@
-﻿using SenseBad.Tiles;
-
-using Terraria;
-using Terraria.ModLoader;
+﻿using Terraria.ModLoader;
 
 namespace SenseBad
 {
-    public class SenseBad : Terraria.ModLoader.Mod
+    public class SenseBad : Mod
     {
         public SenseBad()
         {

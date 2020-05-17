@@ -1,5 +1,5 @@
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
 author = msevilgenius
 displayName = Sense Bad
-version = 0.1.0
+version = 1.0.0
 includePDB = true
